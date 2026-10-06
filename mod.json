@@ -1,0 +1,63 @@
+{
+    "geode": "5.10.0",
+    "gd": {
+        "win": "2.2081",
+        "android": "2.2081"
+    },
+    "id": "elkiteam.ghost-practice",
+    "name": "Ghost Practice",
+    "version": "v0.1.0",
+    "developer": "ELKITEAM",
+    "description": "Research mod: practice sessions that present themselves as normal-mode runs (in-memory only, nothing is written to the save file).",
+    "tags": ["utility"],
+    "settings": {
+        "strip-practice-ui": {
+            "type": "bool",
+            "name": "Strip practice UI",
+            "description": "Hides checkpoint buttons, checkpoint diamonds and 'Practice Mode' texts while a disguised session is active.",
+            "default": true
+        },
+        "disguise-end-screen": {
+            "type": "bool",
+            "name": "Normal end screen",
+            "description": "Level Complete screen is shown in its normal-mode variant instead of the practice variant.",
+            "default": true
+        },
+        "freeze-labels": {
+            "type": "bool",
+            "name": "Freeze overlay labels",
+            "description": "Freezes matching label texts (FPS/CPS/Best Run/... incl. Mega Hack labels) at the moment the first checkpoint is placed.",
+            "default": true
+        },
+        "freeze-label-patterns": {
+            "type": "string",
+            "name": "Label text patterns",
+            "description": "Comma-separated prefixes. Labels whose text starts with one of these are frozen. Case-insensitive. Formats confirmed in MH v9.1.3: 'FPS', 'CPS', 'Best Run: {}', 'Attempt {}'.",
+            "default": "FPS,CPS,Best Run,Attempt,Clicks,Time,Run,Progress,Checkpoint"
+        },
+        "freeze-label-node-ids": {
+            "type": "string",
+            "name": "Label node IDs",
+            "description": "Comma-separated Geode node IDs to freeze (matched exactly). Confirmed in MH v9.1.3: checkpoints-label, percentage-label.",
+            "default": "checkpoints-label,percentage-label"
+        },
+        "spoof-attempt-label": {
+            "type": "bool",
+            "name": "Pin attempt label",
+            "description": "Pins the on-screen attempt label to 'Attempt 1' during a disguised session.",
+            "default": true
+        },
+        "final-restart-hotkey": {
+            "type": "bool",
+            "name": "Final restart hotkey (F9)",
+            "description": "Press F9 during a disguised session: wipes all checkpoints, restarts from 0% and unfreezes labels.",
+            "default": true
+        },
+        "debug-dump-tree": {
+            "type": "bool",
+            "name": "Debug: dump node trees",
+            "description": "Logs UILayer/PlayLayer/PauseLayer node trees to the Geode console. Use this to refine PracticeUICleaner filters.",
+            "default": false
+        }
+    }
+}

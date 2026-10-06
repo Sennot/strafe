@@ -1,0 +1,23 @@
+name: Build Ghost Practice
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - name: Windows
+            os: windows-latest
+    runs-on: ${{ matrix.config.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the mod
+        uses: geode-sdk/build-actions@v1
+
+      # build-actions uploads the packaged .geode file as an artifact automatically
+      # ("Build Output"); it also appends the artifact to the triggering run.

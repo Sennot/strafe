@@ -1,0 +1,14 @@
+# Never commit third-party mods (especially the cracked MegaHack package) to the repo
+*.geode
+*.geode_packaged/
+
+# Build output
+build/
+build-win/
+build-android/
+
+# Local junk
+.vs/
+.vscode/
+.idea/
+*.user
